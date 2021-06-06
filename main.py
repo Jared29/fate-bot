@@ -1,3 +1,4 @@
+
 import discord, os, requests, json
 
 client = discord.Client()
@@ -12,7 +13,8 @@ def get_servant(servName):
 
 # Build the embed message to be sent in chat
 def build_embed(servInfo):
-  embed=discord.Embed(title=servInfo['name'], url="https://fategrandorder.fandom.com/wiki/" + servInfo['name'], 
+  servName = servInfo['name']
+  embed=discord.Embed(title=servInfo['name'], url="https://fategrandorder.fandom.com/wiki/", 
                         description="Class: " + servInfo['className'].capitalize(), 
                         color=0xFF5733)
   embed.set_thumbnail(url=servInfo['extraAssets']['faces']['ascension']['1'])
