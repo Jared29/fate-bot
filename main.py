@@ -1,4 +1,3 @@
-from webbrowser import get
 import discord, os, requests, json
 
 client = discord.Client()
