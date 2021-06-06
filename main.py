@@ -54,4 +54,12 @@ async def on_message(message):
     servEmbed = build_embed(servant)
     await message.channel.send(embed=servEmbed)
 
+  if message.content.startswith('$asc'):
+    servant_req = message.content[5:].split()
+    servant_name = servant_req[0:-1]
+    asc_level = servant_req[-1]
+    payload = {'name': servant_name}
+    servant = get_servant(payload)
+    await message.channel.send(servant['extraAssets']['charaGraph']['ascension'][asc_level])
+
 client.run(my_secret)
