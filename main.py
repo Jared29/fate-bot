@@ -6,7 +6,7 @@ my_secret = os.environ['TOKEN']
 
 def get_servant(servName):
   # URL request to the API
-  response = requests.get("https://api.atlasacademy.io/nice/NA/servant/search", params=servName)
+  response = requests.get("https://api.atlasacademy.io/nice/JP/servant/search", params=servName)
   json_data = json.loads(response.text)
   name = json_data[0]
   return(name)
@@ -51,7 +51,7 @@ async def on_message(message):
 
   if message.content.startswith('$servant'):
     servant_name = message.content[9:]
-    payload = {'name': servant_name}
+    payload = {'name': servant_name, 'lang': 'en'}
     servant = get_servant(payload)
     servEmbed = build_embed(servant)
     await message.channel.send(embed=servEmbed)
