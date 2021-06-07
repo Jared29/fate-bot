@@ -7,6 +7,7 @@ my_secret = os.environ['TOKEN']
 def get_servant(servName):
   # URL request to the API
   response = requests.get("https://api.atlasacademy.io/nice/JP/servant/search", params=servName)
+  print(response.url)
   json_data = json.loads(response.text)
   name = json_data[0]
   return(name)
