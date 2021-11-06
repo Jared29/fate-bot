@@ -1,6 +1,6 @@
-
-import discord, os, requests, json
 from bs4 import BeautifulSoup
+import discord, os, requests, json
+
 
 client = discord.Client()
 my_secret = os.environ['TOKEN']
