@@ -1,5 +1,6 @@
 
 import discord, os, requests, json
+from bs4 import BeautifulSoup
 
 client = discord.Client()
 my_secret = os.environ['TOKEN']
@@ -11,6 +12,16 @@ def get_servant(servName):
   json_data = json.loads(response.text)
   name = json_data[0]
   return(name)
+
+def scrape_sprite(servName, sprite_lvl):
+  response = requests.get("https://fategrandorder.fandom.com/wiki/" + servName)
+  serv_webpage = response.text
+  soup = BeautifulSoup(serv_webpage, "html.parser")
+
+  #lvl = "Stage " + sprite_lvl
+  sprite = soup.find(name="a", title="Stage " + sprite_lvl)
+
+  return(sprite)
 
 # Build the embed message to be sent in chat
 def build_embed(servInfo):
@@ -64,5 +75,13 @@ async def on_message(message):
     payload = {'name': servant_name}
     servant = get_servant(payload)
     await message.channel.send(servant['extraAssets']['charaGraph']['ascension'][asc_level])
+
+  if message.content.startswith('$spr'):
+    servant_req = message.content[5:].split()
+    servant_name = servant_req[0:-1]
+    spr_level = servant_req[-1]
+    #payload = {'name': servant_name}
+    servant_sprite = scrape_sprite(servant_name, spr_level)
+    await message.channel.send(servant_sprite)
 
 client.run(my_secret)
