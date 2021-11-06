@@ -17,7 +17,7 @@ def scrape_sprite(servName, sprite_lvl):
   serv_webpage = response.text
   soup = BeautifulSoup(serv_webpage, "html.parser")
 
-  sprite = soup.find(name="a", title="Stage " + str(sprite_lvl))
+  sprite = soup.find(name="a", title="Sprite " + str(sprite_lvl))
   link = sprite.get("href")
 
   return(link)
