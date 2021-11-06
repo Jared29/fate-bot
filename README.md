@@ -1,5 +1,7 @@
 # fate-bot
-Discord.py bot that retrieves info from the [FGO Atlas Academy API](https://api.atlasacademy.io/docs#/)
+This project is a personal hobby for gaining experience with Python - specifically web scraping and database interaction with live sites - and the Discord API
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Discord.py bot that retrieves info from the [FGO Atlas Academy API](https://api.atlasacademy.io/docs#/) and [FGO Fandom](https://fategrandorder.fandom.com/wiki/Fate/Grand_Order_Wikia#English_Server)
 
 Available commands: 
 
