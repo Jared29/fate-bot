@@ -1,5 +1,5 @@
-#from bs4 import BeautifulSoup
-import discord, os, requests, json, bs4
+from bs4 import BeautifulSoup
+import discord, os, requests, json
 
 
 client = discord.Client()
@@ -16,7 +16,7 @@ def get_servant(servName):
 def scrape_sprite(servName, sprite_lvl):
   response = requests.get("https://fategrandorder.fandom.com/wiki/" + servName)
   serv_webpage = response.text
-  soup = bs4.BeautifulSoup(serv_webpage, "html.parser")
+  soup = BeautifulSoup(serv_webpage, "html.parser")
 
   #lvl = "Stage " + sprite_lvl
   sprite = soup.find(name="a", title="Stage " + sprite_lvl)
