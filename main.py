@@ -14,15 +14,14 @@ def get_servant(servName):
   return(name)
 
 def scrape_sprite(servName, sprite_lvl):
-  #site = "https://fategrandorder.fandom.com/wiki/" + str(servName)
   response = requests.get("https://fategrandorder.fandom.com/wiki/" + str(servName))
   serv_webpage = response.text
   soup = BeautifulSoup(serv_webpage, "html.parser")
 
-  #lvl = "Stage " + sprite_lvl
-  sprite = soup.find(name="a", title="Stage " + sprite_lvl)
+  sprite = soup.find(name="a", title="Stage " + str(sprite_lvl))
+  link = sprite.get("href")
 
-  return(sprite)
+  return(link)
 
 # Build the embed message to be sent in chat
 def build_embed(servInfo):
