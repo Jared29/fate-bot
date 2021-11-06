@@ -14,7 +14,8 @@ def get_servant(servName):
   return(name)
 
 def scrape_sprite(servName, sprite_lvl):
-  response = requests.get("https://fategrandorder.fandom.com/wiki/" + servName)
+  #site = "https://fategrandorder.fandom.com/wiki/" + str(servName)
+  response = requests.get("https://fategrandorder.fandom.com/wiki/" + str(servName))
   serv_webpage = response.text
   soup = BeautifulSoup(serv_webpage, "html.parser")
 
