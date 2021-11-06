@@ -8,13 +8,12 @@ my_secret = os.environ['TOKEN']
 def get_servant(servName):
   # URL request to the API
   response = requests.get("https://api.atlasacademy.io/nice/JP/servant/search", params=servName)
-  print(response.url)
   json_data = json.loads(response.text)
   name = json_data[0]
   return(name)
 
 def scrape_sprite(servName, sprite_lvl):
-  response = requests.get("https://fategrandorder.fandom.com/wiki/" + str(servName))
+  response = requests.get("https://fategrandorder.fandom.com/wiki/" + servName)
   serv_webpage = response.text
   soup = BeautifulSoup(serv_webpage, "html.parser")
 
@@ -80,8 +79,7 @@ async def on_message(message):
     servant_req = message.content[5:].split()
     servant_name = servant_req[0:-1]
     spr_level = servant_req[-1]
-    #payload = {'name': servant_name}
-    servant_sprite = scrape_sprite(servant_name, spr_level)
+    servant_sprite = scrape_sprite(servant_name[0], spr_level)
     await message.channel.send(servant_sprite)
 
 client.run(my_secret)
