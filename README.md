@@ -7,18 +7,13 @@ Available commands:
 
 * $servant [servant name]
   * Returns information pertaining to the specified servant
-  
-    ![Image of example command](https://i.gyazo.com/3460078bdbf4ac43d8a8739c0f748da8.png)
     
 * $asc [servant name] [ascension stage]
   *  Returns the art for the specified servant ascension level
-  
-     ![Image of example command](https://i.gyazo.com/17a579c1023328c08e7ae3ad254d8a77.png)
      
 * $spr [servant name] [sprite stage]
   *  Returns the image for the specified servant sprite level
   
-     ![Image of example command](https://i.gyazo.com/17a579c1023328c08e7ae3ad254d8a77.png)
 * Examples of each command can be found [here](https://imgur.com/a/IoOupg0)
      
 Future functions:
