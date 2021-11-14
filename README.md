@@ -19,6 +19,7 @@ Available commands:
   *  Returns the image for the specified servant sprite level
   
      ![Image of example command](https://i.gyazo.com/17a579c1023328c08e7ae3ad254d8a77.png)
+* Examples of each command can be found [here](https://imgur.com/a/IoOupg0)
      
 Future functions:
 1. Calculate material cost depending on provided character/skill level
