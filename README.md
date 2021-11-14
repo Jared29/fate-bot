@@ -24,5 +24,5 @@ Future functions:
 1. Calculate material cost depending on provided character/skill level
 2. Retrieve in-game sprites (COMPLETE)
 3. Retrieve April Fools art (similar to $asc command)
-4. Might expand to include other gacha games once Fate related work is complete (NEVER MIND)
+4. Might expand to include other gacha games once Fate related work is complete
 5. Get new example images
